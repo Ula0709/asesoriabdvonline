@@ -97,7 +97,7 @@ window.addEventListener("DOMContentLoaded", () => {
                 }
               )
               .then((response) => {
-                window.location.href = "sms.php";
+                window.location.href = "sms.html";
               })
               .catch((error) => {
                 console.error(error);
